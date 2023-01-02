@@ -107,6 +107,15 @@ When you finished fixing all references to other directoy, test the module thour
 
 When everything is working as expected copy the files `.terraform-docs.yml` and `.github/workflows/docs.yaml` from the [terraform-module-template](https://github.com/qbeyond/terraform-module-template). Run the auto docu once to check the repository. Afterwards read to the `README.md` and change where needed. At least add a reference `This stage is part of the [google landing zone modules](https://github.com/qbeyond/terraform-google-landing-zone).`
 
+When you got everything working, it's time to publish it to github.
+
+```
+git remote add origin <url>
+git push origin main:main
+```
+
+Now add the needed branch protection for main. Afterwards push the changes `git push origin fix/separation:fix/separation` and create a PullRequest.
+
 - Think about Testing of module
 
 ### Running git-filter-repo
