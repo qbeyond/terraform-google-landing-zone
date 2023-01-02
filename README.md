@@ -31,7 +31,6 @@ Afterwards you should create the file `git-filter-repo-paths.txt` containing the
 It is very important, that we include all commits for a stage to be able to merge subsequent changes. The first step is to rewrite the git history, so the stage's subfolder is the root of the new repository. This is done by specifying a `literal` path to include and a literal path to rewrite to root. So usually you want to include at least files required for licensing and the folder of the stage.
 
 ```
-LICENSE
 # Paths for the stage
 fast/stages/00-bootstrap/
 fast/stages/00-bootstrap/==>
