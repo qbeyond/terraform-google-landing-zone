@@ -43,9 +43,9 @@ content: |-
 
   Basic Example
   ```hcl
-  {{ include "./modules/template-provider/examples/basic/main.tf" }}
+  {{ include "./modules/provider-template/examples/basic/main.tf" }}
 
-  {{ include "./modules/template-provider/examples/basic/variables.tf" }}
+  {{ include "modules/provider-template/examples/basic/variables.tf" }}
   ```
   
   {{ .Requirements }}
