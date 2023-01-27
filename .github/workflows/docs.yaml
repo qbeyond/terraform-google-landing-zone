@@ -16,5 +16,5 @@ jobs:
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
-        config-file: .terraform-docs.yml
+        config-file: ./modules/provider-template/terraform-docs.yml
         git-push: "true"
