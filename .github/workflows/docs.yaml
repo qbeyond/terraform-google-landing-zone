@@ -17,7 +17,6 @@ jobs:
       uses: terraform-docs/gh-actions@main
       with:
         working-dir: "./modules/provider-template"
-        output-file: "README.md"
         output-method: inject
         config-file: ./modules/provider-template/terraform-docs.yml
         git-push: "true"
