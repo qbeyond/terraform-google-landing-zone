@@ -104,7 +104,7 @@ Afterwards you need to fix that module. First thing you definitely need to fix a
 
 When you finished fixing all references to other directoy, test the module thourougly. 
 
-When everything is working as expected copy the files `.terraform-docs.yml` and `.github/workflows/docs.yaml` from the [terraform-module-template](https://github.com/qbeyond/terraform-module-template). Run the auto docu once to check the repository. Afterwards read to the `README.md` and change where needed. At least add a reference `This stage is part of the [google landing zone modules](https://github.com/qbeyond/terraform-google-landing-zone).`
+When everything is working as expected copy the files `.terraform-docs.yml` and `.github/workflows/docs.yaml` from the [terraform-module-template](https://github.com/qbeyond/terraform-module-template). Run the auto docu once to check the repository. Afterwards head to the `README.md` and change where needed. Lastly add a reference `This stage is part of the [google landing zone modules](https://github.com/qbeyond/terraform-google-landing-zone).`
 
 When you got everything working, it's time to publish it to github.
 
@@ -120,51 +120,3 @@ Now add the needed branch protection for main. Afterwards push the changes `git 
 ### Running git-filter-repo
 
 `git-filter-repo` is not included in default git installation. See [Installation instructions](https://github.com/newren/git-filter-repo/blob/main/INSTALL.md) how to install it. Note that windows ships with an *stub* for `python.exe` and `python3.exe` so even when you installed python by other means then the *msstore* you may get weird behavior. Try to disable the *app execution aliases* in *Windows settings*.
-<!-- BEGIN_TF_DOCS -->
-## Usage
-
-Basic Example
-```hcl
-resource "random_id" "testprefix" {
-  byte_length = 5
-}
-
-module "gcs-provider" {
-  source          = "../.."
-  bucket_name     = "test${random_id.testprefix.hex}"
-  service_account = var.service_account
-}
-
-variable "bucket_name" {
-  description = "Bucket Name"
-  type        = string
-}
-
-variable "service_account" {
-  description = "service Account to create storage bucket with"
-}
-```
-
-## Requirements
-
-No requirements.
-
-## Inputs
-
-No inputs.
-## Outputs
-
-No outputs.
-## Resource types
-
-No resources.
-
-
-## Modules
-
-No modules.
-## Resources by Files
-
-No resources.
-
-<!-- END_TF_DOCS -->
