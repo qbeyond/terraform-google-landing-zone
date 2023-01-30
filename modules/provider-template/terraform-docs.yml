@@ -9,10 +9,6 @@ sections:
     - header
     - providers
 
-output:
-  file: "./modules/provider-template/README.md"
-  mode: inject
-
 sort:
   enabled: true
   by: required

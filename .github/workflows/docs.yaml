@@ -15,6 +15,9 @@ jobs:
         ref: ${{ github.head_ref }}
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
+      output:
+        file: "./modules/provider-template/README.md"
+        mode: inject
       with:
         config-file: ./modules/provider-template/terraform-docs.yml
         git-push: "true"
