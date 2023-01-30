@@ -104,7 +104,7 @@ Afterwards you need to fix that module. First thing you definitely need to fix a
 
 When you finished fixing all references to other directoy, test the module thourougly. 
 
-When everything is working as expected copy the files `.terraform-docs.yml` and `.github/workflows/docs.yaml` from the [terraform-module-template](https://github.com/qbeyond/terraform-module-template). Run the auto docu once to check the repository. Afterwards read to the `README.md` and change where needed. At least add a reference `This stage is part of the [google landing zone modules](https://github.com/qbeyond/terraform-google-landing-zone).`
+When everything is working as expected copy the files `.terraform-docs.yml` and `.github/workflows/docs.yaml` from the [terraform-module-template](https://github.com/qbeyond/terraform-module-template). Run the auto docu once to check the repository. Afterwards head to the `README.md` and change where needed. Lastly add a reference `This stage is part of the [google landing zone modules](https://github.com/qbeyond/terraform-google-landing-zone).`
 
 When you got everything working, it's time to publish it to github.
 
