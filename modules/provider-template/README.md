@@ -23,13 +23,9 @@ module "gcs-provider" {
   service_account = var.service_account
 }
 
-variable "bucket_name" {
-  description = "Bucket Name"
-  type        = string
-}
-
 variable "service_account" {
   description = "service Account to create storage bucket with"
+  type = string
 }
 ```
 
@@ -62,7 +58,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_bucket_name"></a> [bucket\_name](#input\_bucket\_name) | Bucket Name | `string` | n/a | yes |
-| <a name="input_service_account"></a> [service\_account](#input\_service\_account) | service Account to create storage bucket with | `any` | n/a | yes |
+| <a name="input_service_account"></a> [service\_account](#input\_service\_account) | service Account to create storage bucket with | `string` | n/a | yes |
 ## Outputs
 
 | Name | Description |
