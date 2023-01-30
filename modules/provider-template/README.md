@@ -9,7 +9,51 @@ Note that this is a Terraform template file, and you will need to u
 
 
 <!-- BEGIN_TF_DOCS -->
+## Usage
 
+Basic Example
+```hcl
+resource "random_id" "testprefix" {
+  byte_length = 5
+}
+
+module "gcs-provider" {
+  source          = "../.."
+  bucket_name     = "test${random_id.testprefix.hex}"
+  service_account = var.service_account
+}
+
+variable "bucket_name" {
+  description = "Bucket Name"
+  type        = string
+}
+
+variable "service_account" {
+  description = "service Account to create storage bucket with"
+}
+```
+
+## Requirements
+
+No requirements.
+
+## Inputs
+
+No inputs.
+## Outputs
+
+No outputs.
+## Resource types
+
+No resources.
+
+
+## Modules
+
+No modules.
+## Resources by Files
+
+No resources.
 
 <!-- END_TF_DOCS -->
 ## Usage
