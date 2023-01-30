@@ -33,6 +33,26 @@ variable "service_account" {
 }
 ```
 
+This returns a templatefile with the following structure
+
+## Template File
+The `providers.tf.tpl` file contains the following Terraform configuration:
+
+```hcl
+terraform {
+backend "gcs" {
+bucket                      = "${bucket_name}"
+impersonate_service_account = "${service_account}"
+}
+}
+provider "google" {
+impersonate_service_account = "${service_account}"
+}
+provider "google-beta" {
+impersonate_service_account = "${service_account}"
+}
+```
+
 ## Requirements
 
 No requirements.
