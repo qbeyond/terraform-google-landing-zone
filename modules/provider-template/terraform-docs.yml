@@ -9,6 +9,10 @@ sections:
     - header
     - providers
 
+output:
+  output-file: "README.md"
+  output-method: inject
+
 sort:
   enabled: true
   by: required
