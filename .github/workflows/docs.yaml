@@ -16,6 +16,7 @@ jobs:
     - name: Render terraform docs and push changes back to PR
       uses: terraform-docs/gh-actions@main
       with:
+        working-dir: "./modules/provider-template"
         output-file: "./modules/provider-template/README.md"
         output-method: inject
         config-file: ./modules/provider-template/terraform-docs.yml
