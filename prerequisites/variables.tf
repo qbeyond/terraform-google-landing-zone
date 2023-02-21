@@ -1,10 +1,5 @@
-variable "organization_id" {
-  description = "Customer ID of the workspace."
-  type        = string
-}
-
-variable "domain" {
-  description = "Pimary domain of the organization."
+variable "organization_domain" {
+  description = "Primary domain of the organization."
   type        = string
 }
 
