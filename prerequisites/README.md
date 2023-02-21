@@ -7,8 +7,7 @@ Before using this module, you need to perform the following steps:
 Login via gcloud auth application-default login.
 Provide values for the following variables in your Terraform configuration:
 billing_project: the ID of the billing project to associate with the resources created by this module.
-organization_id: the ID of the organization that will contain the groups created by this module.
-domain: the domain name to use for the group email addresses.
+organization_domain: the ID of the organization that will contain the groups created by this module.
 
 ## Usage
 You can use this module in your Terraform configuration as follows:
@@ -17,13 +16,11 @@ You can use this module in your Terraform configuration as follows:
 module "required_groups_bootstrap" {
   source = "path/to/required_groups_bootstrap"
 
-  billing_project   = "my-billing-project"
-  organization_id   = "1234567890"
-  domain            = "example.com"
+  billing_project     = "my-billing-project"
+  organization_domain = "test.customer.de"
 }
 ```
 
 ## Module Variables
 billing_project: (Required) The ID of the billing project to associate with the resources created by this module.
-organization_id: (Required) The ID of the organization that will contain the groups created by this module.
-domain: (Required) The domain name to use for the group email addresses.
+organization_domain: (Required) The domain name of the organization that will contain the groups created by this module.
