@@ -1,5 +1,5 @@
 provider "google" {
-  billing_project       = "${var.billing_project}"
+  billing_project       = var.billing_project
   user_project_override = true
 }
 
@@ -17,7 +17,7 @@ locals {
   }
 }
 
-resource "google_cloud_identity_group" "cloud_identity_group_basic" {
+resource "google_cloud_identity_group" "basic" {
   for_each     = local.groups
   display_name = each.value
 
