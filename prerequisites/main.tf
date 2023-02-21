@@ -3,6 +3,10 @@ provider "google" {
   user_project_override = true
 }
 
+data "google_organization" "default" {
+  domain = var.organization_domain
+}
+
 locals {
   groups = {
     "gcp-billing-admins"      = "Billing Admins"
@@ -17,10 +21,10 @@ resource "google_cloud_identity_group" "cloud_identity_group_basic" {
   for_each     = local.groups
   display_name = each.value
 
-  parent = "customers/${var.organization_id}"
+  parent = "customers/${data.google_organization.default.directory_customer_id}"
 
   group_key {
-    id = "${each.key}@${var.domain}"
+    id = "${each.key}@${var.organization_domain}"
   }
 
   labels = {
